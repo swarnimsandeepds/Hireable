@@ -33,7 +33,7 @@ const Index = () => {
       );
     }
 
-    if (type) {
+    if (type && type !== "all") {
       filtered = filtered.filter((job) => job.type === type);
     }
 
@@ -90,7 +90,7 @@ const Index = () => {
                 {filteredJobs.length} jobs found
                 {searchQuery && ` for "${searchQuery}"`}
                 {locationFilter && ` in ${locationFilter}`}
-                {typeFilter && ` • ${typeFilter}`}
+                {typeFilter && typeFilter !== "all" && ` • ${typeFilter}`}
               </p>
             </div>
           </div>
